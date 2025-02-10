@@ -1,0 +1,50 @@
+Initial Dataset Snapshot:
+  Invoice StockCode                          Description  Quantity         InvoiceDate  Price  Customer ID         Country
+0  489434     85048  15CM CHRISTMAS GLASS BALL 20 LIGHTS        12 2009-12-01 07:45:00   6.95      13085.0  United Kingdom
+1  489434    79323P                   PINK CHERRY LIGHTS        12 2009-12-01 07:45:00   6.75      13085.0  United Kingdom
+2  489434    79323W                  WHITE CHERRY LIGHTS        12 2009-12-01 07:45:00   6.75      13085.0  United Kingdom
+3  489434     22041         RECORD FRAME 7" SINGLE SIZE         48 2009-12-01 07:45:00   2.10      13085.0  United Kingdom
+4  489434     21232       STRAWBERRY CERAMIC TRINKET BOX        24 2009-12-01 07:45:00   1.25      13085.0  United Kingdom
+
+Missing Values Before Cleaning:
+ Invoice             0
+StockCode           0
+Description      2928
+Quantity            0
+InvoiceDate         0
+Price               0
+Customer ID    107927
+Country             0
+dtype: int64
+
+Missing Values After Cleaning:
+ Invoice        0
+StockCode      0
+Description    0
+Quantity       0
+InvoiceDate    0
+Price          0
+Customer ID    0
+Country        0
+dtype: int64
+
+Class Distribution for High Spenders:
+ High_Spender
+0    377111
+1    134455
+Name: count, dtype: int64
+
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     75601
+           1       1.00      1.00      1.00     75243
+
+    accuracy                           1.00    150844
+   macro avg       1.00      1.00      1.00    150844
+weighted avg       1.00      1.00      1.00    150844
+
+Key Observations:
+1. Model is trained to predict 'High Spenders' (Top 25% customers by total spend).
+2. Features like 'Total Spend' and 'Mean Spend Per Transaction' are critical predictors.
+3. Anomaly detection ensures data integrity, removing potentially noisy records.
